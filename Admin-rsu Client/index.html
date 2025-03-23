@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | RSUBLOG</title><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="d-flex vh-100">
+        <!-- Left Menu Section -->
+        <div class="d-flex flex-column flex-shrink-0 p-3 position-relative small-side vh-100 z-3"
+            style="border-right: 1px solid #e3dddd;width: 16.25rem;left: 0;box-shadow: 2px 0 10px 0px rgba(0, 0, 0, 0.15);">
+            <div class="position-fixed" style="
+    width: 14rem;
+">
+                <h3 class="m-0 mt-1">RSUBLOG</h3>
+                <hr>
+                <nav class="d-flex flex-column gap-1 w-100">
+                    <a href="#Dashboard"
+                        class="align-items-center bg-success d-flex gap-2 indicate-link menu-link p-2 rounded-3 text-decoration-none text-white">
+                        <i class="fa-compass fa-regular" aria-hidden="true"></i> Dashboard
+                    </a>
+                    <a href="./client.html"
+                        class="align-items-center d-flex gap-2 indicate-link menu-link p-2 rounded-3 text-decoration-none text-success">
+                        <i class="fa-regular fa-user" aria-hidden="true"></i> Clients
+                    </a>
+                    <a href="#Statistics"
+                        class="align-items-center d-flex gap-2 indicate-link menu-link mt-1 p-2 rounded-3 text-decoration-none text-success">
+                        <i class="fa-regular fa-chart-bar" aria-hidden="true"></i> Statistics
+                    </a>
+                    <a href="#Finance"
+                        class="align-items-center d-flex gap-2 indicate-link menu-link mt-1 p-2 rounded-3 text-decoration-none text-success">
+                        <i class="fa-regular fa-money-bill-alt" aria-hidden="true"></i> Finance
+                    </a>
+                    <hr>
+                    <a href="#Logout"
+                        class="align-items-center d-flex gap-2 indicate-link menu-link mt-1 p-2 rounded-3 text-decoration-none text-success">
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                    </a>
+                </nav>
+            </div>
+        </div>
+
+        <!-- Wide Section -->
+        <div class="row m-0 flex-grow-1 p-0 w-100">
+            <div class="bg-light vh-100 p-0">
+                <div
+                    class="align-items-baseline bg-white d-flex justify-content-between position-sticky px-3 py-1 top-0 z-2">
+                    <h6 class="mb-1 date">November 13, 2024</h6>
+                    <div class="align-items-baseline d-flex gap-2">
+                        <div class="input-group input-group-sm" style="max-width: 8rem;">
+                            <input type="search" class="form-control rounded-5" placeholder="Search"
+                                aria-label="Search">
+                            <button type="button" class="btn btn-outline-success rounded-5 w-auto"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                        <span><i class="fa-regular fa-bell"></i></span>
+                        <span class="m-auto vertical-hr"></span>
+                        <span class="d-inline-block overflow-hidden rounded-circle"
+                            style="width: 1.875rem;height: 1.875rem;">
+                            <img src="../img/bit-5.jpeg" alt="user" class="img-fluid rounded-circle">
+                        </span>
+                    </div>
+                </div>
+                <!-- Content-area -->
+                <!-- <div class="d-flex gap-1 mb-2 mt-4">
+                        <h3 class="m-0">Orders 😍</h3>
+                        <div class="bg-success-subtle p-1 rounded-3"><span class="bg-white p-1 rounded-3" style="
+    font-size: small;
+">Daily</span> <span style="
+    font-size: small;
+">Monthly</span></div>
+                    </div>
+
+                    <div class="d-flex gap-3 hide-scrollbar">
+
+                        <span class="bg-primary-subtle p-3 rounded">
+                            <div class="d-flex flex-column">
+                                <span class="fw-bold mb-2 mb-lg-0">New Orders</span>
+                                <div class="align-items-center d-flex gap-2">
+                                    <span class="fs-4 fw-bold text-primary">245</span> <span
+                                        class="vertical-hr2"></span>
+                                    <span>Impressions</span> <span class="text-nowrap">20% <i
+                                            class="fas fa-arrow-up text-success"></i></span>
+                                </div>
+                            </div>
+                        </span>
+
+                        <span class="bg-secondary-subtle p-3 rounded">
+                            <div class="d-flex flex-column">
+                                <span class="fw-bold mb-2 mb-lg-0">Pending Orders</span>
+                                <div class="align-items-center d-flex gap-2">
+                                    <span class="fs-4 fw-bold text-secondary">245</span> <span
+                                        class="vertical-hr2"></span>
+                                    <span>Impressions</span> <span class="text-nowrap">17% <i
+                                            class="fas fa-arrow-down text-danger"></i></span>
+                                </div>
+                            </div>
+                        </span>
+
+                        <span class="bg-warning-subtle p-3 rounded">
+                            <div class="d-flex flex-column">
+                                <span class="fw-bold mb-2 mb-lg-0">Delivered Orders</span>
+                                <div class="align-items-center d-flex gap-2">
+                                    <span class="fs-4 fw-bold text-warning">245</span> <span
+                                        class="vertical-hr2"></span>
+                                    <span>Impressions</span> <span class="text-nowrap">20% <i
+                                            class="fas fa-arrow-up text-success"></i></span>
+                                </div>
+                            </div>
+                        </span>
+                    </div>
+
+
+
+                    <div>
+                        <div class="mt-4">
+                            <div>
+                                <div class="d-flex gap-3 hide-scrollbar"
+                                    style="overflow-y: clip;overflow-x: scroll;flex-wrap: nowrap;">
+                                    <span class="fw-medium pb-2 position-relative text-nowrap text-success">All
+                                        Orders <span class=" indicate"></span> </span>
+                                    <span class="fw-medium text-nowrap">Pending Orders</span>
+                                    <span class="fw-medium text-nowrap">Delivered Orders</span>
+                                    <span class="fw-medium text-nowrap">Booked Orders</span>
+                                    <span class="fw-medium text-nowrap">Cancelled Orders</span>
+                                </div>
+                            </div>
+
+                            <hr class="m-0 mb-3">
+
+                            <div class="overflow-y-scroll position-relative table-responsive hide-scrollbar" style="
+    max-height: 22rem;
+">
+                                <table class="table table-bordered table-hover">
+                                    <thead class="position-sticky table-light top-0">
+                                        <tr>
+                                            <th class="align-baseline">
+                                                <div class="d-flex gap-1"><span><i class=" fa-regular fa-hashtag">
+                                                        </i></span>Order ID
+                                                </div>
+                                            </th>
+                                            <th class="align-baseline">
+                                                <div class="d-flex gap-1"><span><i
+                                                            class="fa-regular fa-calendar-alt"></i></span>Ordered Date
+                                                </div>
+                                            </th>
+                                            <th class="">
+                                                <div class="d-flex
+                                        gap-1"><span><i class="fa-brands fa-product-hunt"></i></span> Product Name
+                                                </div>
+                                            </th>
+
+                                            <th class="align-baseline">
+                                                <div class="d-flex gap-1"><span><i class="fa-regular fa-dollar-sign" "=""></i></span>Product Price </div></th>
+                                    <th class=" align-baseline">
+                                                            <div class="d-flex gap-1">
+                                                                <span><i
+                                                                        class="fas fa-question-circle"></i></span>Status
+                                                            </div>
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td>
+                                                <span"><i class="fa-check-circle far text-success"></i> Delivered
+                                                </span">
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-check-circle far text-success"></i> Delivered</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="far fa-clock text-warning"></i> Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-check-circle far text-success"></i> Delivered</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-times-circle far text-danger"></i> Canceled</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="far fa-clock text-warning"></i> Pending</span></td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-check-circle far text-success"></i> Delivered</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-times-circle far text-danger"></i> Canceled</span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>#23456</td>
+                                            <td>3-11-2024</td>
+                                            <td>Ad Payment</td>
+                                            <td>125 USD</td>
+                                            <td><span><i class="fa-check-circle far text-success"></i> Delivered</span>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div> -->
+
+
+                <div class="d-flex justify-content-between mt-2 bg-light px-3">
+                    <div class="d-flex flex-column">
+                        <h4 class="m-0">Clients</h4>
+                        <div class="date">Lorem ipsum dolor sit.</div>
+                    </div>
+                    <div class="align-items-center d-flex gap-2">
+                        <div class="input-group input-group-sm bg-secondary-subtle d-flex rounded-pill"
+                            style="max-width: 10rem;/* height: 1rem; */">
+                            <input type="search" class="bg-secondary-subtle form-control rounded-5" placeholder="Search"
+                                aria-label="Search">
+                            <button type="button" class="btn rounded-5 text-success w-auto"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                        <div class="dropdown-center">
+                            <button class="border btn dropdown-toggle rounded-pill" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Newest
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Action two</a></li>
+                                <li><a class="dropdown-item" href="#">Action three</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="container container-shadow h-100 hide-scrollbar mt-2 p-3 w-100">
+                    <div class="grid-container" style="view-timeline-name: item-timeline;">
+
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+
+
+
+
+
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                        <div
+                            class="align-items-center bg-white border d-flex justify-content-evenly p-3 rounded-4 crd block ">
+
+                            <span class="bg-success d-block rounded-circle" style="
+    width: 4.5rem;
+    height: 4.5rem;
+">
+                                <span>
+                                    <img src="../img/bit-5.jpeg" alt="" class="img-fluid rounded-circle">
+                                </span>
+                            </span>
+
+                            <div class="align-items-center d-flex flex-column gap-1">
+                                <div class="align-items-center d-flex flex-column">
+                                    <span>Neo John</span>
+                                    <span>Moderator</span>
+                                </div>
+                                <span><a href="#">View profile</a></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="bottom-nav-container d-none p-0">
+                <div class="bg-white bottom-nav d-flex gap-3 justify-content-between p-2 rounded-3 w-100">
+                    <a href="#Dashboard"
+                        class="fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                        <span><i class="fa-regular fa-compass" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="#Clients"
+                        class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                        <span><i class="fa-regular fa-user" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="#Statistics"
+                        class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                        <span><i class="fa-regular fa-chart-bar" aria-hidden="true"></i></span>
+                    </a>
+                    <a href="#Finance"
+                        class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                        <span><i class="fa-regular fa-money-bill-alt" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

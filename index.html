@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page | RSUBLOG</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="h-100 m-0 row">
+        <!-- left-Menu-Section -->
+        <div class="col-lg-3 d-sm-flex flex-shrink-1 justify-content-center position-relative small-side" style="/* height: 100vh; */width: 9rem;border-right: 1px solid #e3dddd;">
+            <div class="justify-content-center position-fixed">
+                <div>
+                    <h3 class="m-0 mt-1">RSUBLOG</h3>
+                    <hr>
+
+                    <div class="d-flex flex-column gap-1 w-100">
+                        <a href="#Dashboard" class="bg-success d-flex gap-2 menu-link p-2 rounded-3 text-decoration-none text-white text-success"><span>
+                                <i class="fa-regular fa-compass" aria-hidden="true"></i>
+                            </span>Dashboard</a>
+                        <a href="#Clients" class="d-flex gap-2 indicate-link menu-link p-2 rounded-3 text-decoration-none text-success"><span>
+                                <i class="fa-regular fa-user" aria-hidden="true"></i>
+                            </span>Clients</a><a href="#Statistics" class="d-flex gap-2 indicate-link menu-link mt-1 p-2 rounded-3 text-decoration-none text-success"><span>
+                                <i class="fa-regular fa-chart-bar" aria-hidden="true"></i>
+                            </span>Statistics</a>
+                        <a href="#Finance" class="d-flex gap-2 indicate-link menu-link mt-1 p-2 rounded-3 text-decoration-none text-success"><span>
+                                <i class="fa-regular fa-money-bill-alt" aria-hidden="true"></i>
+                            </span>Finance</a>
+                        <hr>
+
+
+                        <a href="#Logout" class="d-flex gap-2 menu-link mt-1 p-2 rounded-4 text-decoration-none text-success"><span>
+                                <i class="fa fa-sign-out" aria-hidden="true"></i>
+                            </span>Logout</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Wide-Section -->
+        <div class="col-9 flex-grow-1 position-relative px-3">
+            <!-- Actual Date -->
+
+            <div class="align-items-baseline bg-white d-flex justify-content-between position-sticky py-1 top-0 z-1">
+                <h6 class="mb-1 date">November 13, 2024</h6>
+
+                <div class="align-items-baseline d-flex gap-2">
+                    <div class="input-group input-group-sm" style="width: 8rem;">
+                        <input type="search" class="form-control rounded-5" placeholder="Search" aria-label="Search" aria-describedby="search-addon">
+                        <button type="button" class="btn btn-outline-success rounded-5 w-auto" data-mdb-ripple-init=""><i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                    <span><i class="fa-regular fa-bell"></i></span>
+                    <span class="m-auto vertical-hr"></span>
+                    <span class="bg-danger overflow-hidden rounded-circle d-inline-block" style="width: 30px; height: 30px;">
+                        <img src="./img/bit-5.jpeg" alt="user" class="img-fluid rounded-circle">
+                    </span>
+                </div>
+            </div>
+
+            <div class="align-items-center d-flex gap-5 mb-2 mt-2">
+                <h3 class="m-0">Orders 😍</h3>
+                <div class="bg-success-subtle p-1 rounded-3"><span class="bg-white p-1 rounded-3" style="
+    font-size: small;
+">Daily</span> <span style="
+    font-size: small;
+">Monthly</span></div>
+            </div>
+
+            <div class="d-flex gap-3 hide-scrollbar">
+
+                <span class="bg-primary-subtle p-3 rounded">
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold mb-2 mb-lg-0">New Orders</span>
+                        <div class="align-items-center d-flex gap-2">
+                            <span class="fs-4 fw-bold text-primary">245</span> <span class="vertical-hr2"></span>
+                            <span>Impressions</span> <span class="text-nowrap">20% <i class="fas fa-arrow-up text-success"></i></span>
+                        </div>
+                    </div>
+                </span>
+
+                <span class="bg-secondary-subtle p-3 rounded">
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold mb-2 mb-lg-0">Pending Orders</span>
+                        <div class="align-items-center d-flex gap-2">
+                            <span class="fs-4 fw-bold text-secondary">245</span> <span class="vertical-hr2"></span>
+                            <span>Impressions</span> <span class="text-nowrap">17% <i class="fas fa-arrow-down text-danger"></i></span>
+                        </div>
+                    </div>
+                </span>
+
+                <span class="bg-warning-subtle p-3 rounded">
+                    <div class="d-flex flex-column">
+                        <span class="fw-bold mb-2 mb-lg-0">Delivered Orders</span>
+                        <div class="align-items-center d-flex gap-2">
+                            <span class="fs-4 fw-bold text-warning">245</span> <span class="vertical-hr2"></span>
+                            <span>Impressions</span> <span class="text-nowrap">20% <i class="fas fa-arrow-up text-success"></i></span>
+                        </div>
+                    </div>
+                </span>
+            </div>
+
+
+
+            <div>
+                <div class="mt-4">
+                    <div class="">
+                        <div class="d-flex gap-3 hide-scrollbar overflow-auto" style="flex-wrap: nowrap;">
+                            <span class="fw-medium pb-2 position-relative text-nowrap text-success" "="">All
+                                Orders <span class=" indicate"></span> </span>
+                            <span class="fw-medium text-nowrap">Pending Orders</span>
+                            <span class="fw-medium text-nowrap">Delivered Orders</span>
+                            <span class="fw-medium text-nowrap">Booked Orders</span>
+                            <span class="fw-medium text-nowrap">Cancelled Orders</span>
+                        </div>
+                    </div>
+
+                    <hr class="m-0 mb-3">
+
+                    <div class="overflow-y-scroll position-relative table-responsive hide-scrollbar" style="
+    max-height: 22rem;
+">
+                        <table class="table table-bordered table-hover">
+                            <thead class="position-sticky table-light top-0">
+                                <tr>
+                                    <th class="align-baseline">
+                                        <div class="d-flex gap-1" "=""><span><i class=" fa-regular fa-hashtag">
+                                            </i></span>Order ID
+                                        </div>
+                                    </th>
+                                    <th class="align-baseline">
+                                        <div class="d-flex gap-1"><span><i class="fa-regular fa-calendar-alt"></i></span>Ordered Date</div>
+                                    </th>
+                                    <th class="">
+                                        <div class="d-flex
+                                        gap-1"><span><i class="fa-brands fa-product-hunt"></i></span> Product Name
+                                        </div>
+                                    </th>
+
+                                    <th class="align-baseline">
+                                        <div class="d-flex gap-1"><span><i class="fa-regular fa-dollar-sign" "=""></i></span>Product Price </div></th>
+                                    <th class=" align-baseline">
+                                                    <div class="d-flex gap-1">
+                                                        <span><i class="fas fa-question-circle"></i></span>Status
+                                                    </div>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td>
+                                        <span"><i class="fa-check-circle far text-success"></i> Delivered</span">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-check-circle far text-success"></i> Delivered</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="far fa-clock text-warning"></i> Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-check-circle far text-success"></i> Delivered</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-times-circle far text-danger"></i> Canceled</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="far fa-clock text-warning"></i> Pending</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-check-circle far text-success"></i> Delivered</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-times-circle far text-danger"></i> Canceled</span></td>
+                                </tr>
+                                <tr>
+                                    <td>#23456</td>
+                                    <td>3-11-2024</td>
+                                    <td>Vibrator</td>
+                                    <td>125 USD</td>
+                                    <td><span><i class="fa-check-circle far text-success"></i> Delivered</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="bottom-nav-container d-none">
+                        <div class="bg-white bottom-nav d-flex gap-3 justify-content-between p-2 rounded-3 w-100">
+                            <a href="#Dashboard" class="fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                                <span><i class="fa-regular fa-compass" aria-hidden="true"></i></span>
+                            </a>
+                            <a href="#Clients" class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                                <span><i class="fa-regular fa-user" aria-hidden="true"></i></span>
+                            </a>
+                            <a href="#Statistics" class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                                <span><i class="fa-regular fa-chart-bar" aria-hidden="true"></i></span>
+                            </a>
+                            <a href="#Finance" class="d-flex fw-bold indicate-link menu-link mt-1 p-2 px-3 rounded-4 text-decoration-none text-success">
+                                <span><i class="fa-regular fa-money-bill-alt" aria-hidden="true"></i></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="index.js"></script>
+
+
+
+
+
+
+
+
+</body>
+
+</html>
